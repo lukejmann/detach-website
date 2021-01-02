@@ -18,10 +18,31 @@ body {}
     font-family: NewYork;
     color: #FFF0D6;
     letter-spacing: 0vw;
-    font-size: 3.2vw;
-    line-height: 3.85vw;
+    font-size: 2.9vw;
+    line-height: 3.5vw;
     font-weight: 500;
+    padding: 0;
     /* height: 100%; */
+}
+
+.main-text {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+@media (max-width: 766px) {
+    .r1 {
+        font-size: 5.2vw;
+        line-height: 6.2vw;
+    }
+    .ss {
+        padding-top: 10vh;
+    }
+}
+
+.r1 a {
+    text-decoration: underline;
+    color: #FFF0D6;
 }
 
 .logo {
