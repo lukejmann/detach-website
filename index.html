@@ -16,10 +16,42 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+
+    <script>
+        var i = 0;
+        var txt = `Detach is a free iPhone app. <br> <br> It blocks distracting apps from < br > your phone so you can get work done. < br > < br > You can < a href = "https://apps.apple.com/us/app/detach-block-distractions/id1505152438" > find it on the App Store. < /a>`
+        var speed = 25; /* The speed/duration of the effect in milliseconds */
+        var text = [...
+            'Detach is a free iPhone app.'.split(''),
+            `<br><br>`,
+            ...
+            `It blocks distracting apps from`.split(''),
+            `<br>`,
+            ...
+            `your phone so you can get work done.`.split(''),
+            `<br><br>`,
+            ...
+            'You can '.split(''),
+            `<a href = "https://apps.apple.com/us/app/detach-block-distractions/id1505152438">`,
+            ...
+            'find it on the App Store.'.split(''),
+            `</a>`
+
+        ]
+
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("main-txt").innerHTML += text[i];
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+        window.onload = typeWriter;
+    </script>
 </head>
 
 <body style="background-color:black">
-    <div class="container-fluid c1 unselectable">
+    <div class="container-fluid c1 unselectable" onload="typeWriter()">
         <div style="height: 5%"></div>
         <div style="height: 5%" src="row ml-1">
             <div class="row logo">
@@ -30,9 +62,11 @@
         </div>
         <div style="height: 10%"></div>
         <div style="height: 70%" class="row r1">
-            <div class="my-auto main-txt">
-                Detach is an iPhone app.
-                <br><br> It blocks distracting apps from<br>your phone so you can get work done. <br><br> You can <a href="https://apps.apple.com/us/app/detach-block-distractions/id1505152438">find it on the App Store.</a>
+
+
+            <div class="col-12 col-md-7 my-auto main-txt" id="main-txt">
+                <!-- Detach is a free iPhone app.
+                <br><br> It blocks distracting apps from<br>your phone so you can get work done. <br><br> You can <a href="https://apps.apple.com/us/app/detach-block-distractions/id1505152438">find it on the App Store.</a> -->
             </div>
             <!-- <div class="col-2 d-lg-none"></div> -->
             <div class="col-12 col-md-5 my-auto ss">
@@ -45,6 +79,8 @@
 
     </div>
 </body>
+
+
 
 </html>
 
